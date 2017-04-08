@@ -29,13 +29,13 @@
 		</div>
 		<div class="row spacer"></div>
 		<div class="row">
-			<div class="col-sm-4 text-center">
+			<div class="col-sm-3 text-center">
 				<div class="form-group">
 					<label for="input_name">What's the Itinerary's Name?:</label>
 					<input type="text" class="form-control" id="input_name" placeholder="Coding @ Northrup Grumman">
 				</div>
 			</div>
-			<div class="col-sm-4 text-center">
+			<div class="col-sm-3 text-center">
 				<div class="form-group">
 					<label for="input_time">What's the Total Time Spent:</label>
 					<select class="form-control" id="input_time">
@@ -47,7 +47,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="col-sm-4 text-center">
+			<div class="col-sm-3 text-center">
 				<div class="form-group">
 					<label for="input_purpose">What's the Purpose?</label>
 					<select class="form-control" id="input_purpose">
@@ -58,6 +58,15 @@
 						<option>A Professional Meetup</option>
 						<option>By Yourself</option>
 						<option>For Recreation</option>-->
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-3 text-center">
+				<div class="form-group">
+					<label for="input_activity">What's the Preferred Activity?</label>
+					<select class="form-control" id="input_activity">
+						{% block options_activity %}
+						{% endblock %}
 					</select>
 				</div>
 			</div>
