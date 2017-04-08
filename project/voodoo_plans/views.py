@@ -13,7 +13,7 @@ import autocomplete
 import gmap_directions
 
 def index(request):
-    return render(request, 'home.html', {})
+    return render(request, 'home.template.html', {})
 
 def itnrsub(request):
     if request.method == 'POST':

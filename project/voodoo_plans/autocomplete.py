@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-
 This program demonstrates the capability of the Yelp Fusion API
 by using the Search API to query for businesses by a search term and location,
 and the Business API to query additional information about the top result
 from the search query.
-
-
-
 """
 from __future__ import print_function
 
@@ -58,15 +54,12 @@ SEARCH_LIMIT = 3
 
 def obtain_bearer_token(host, path):
     """Given a bearer token, send a GET request to the API.
-
     Args:
         host (str): The domain host of the API.
         path (str): The path of the API after the domain.
         url_params (dict): An optional set of query parameters in the request.
-
     Returns:
         str: OAuth bearer token, obtained using client_id and client_secret.
-
     Raises:
         HTTPError: An error occurs from the HTTP request.
     """
@@ -88,16 +81,13 @@ def obtain_bearer_token(host, path):
 
 def request(host, path, bearer_token, url_params=None):
     """Given a bearer token, send a GET request to the API.
-
     Args:
         host (str): The domain host of the API.
         path (str): The path of the API after the domain.
         bearer_token (str): OAuth bearer token, obtained using client_id and client_secret.
         url_params (dict): An optional set of query parameters in the request.
-
     Returns:
         dict: The JSON response from the request.
-
     Raises:
         HTTPError: An error occurs from the HTTP request.
     """
@@ -114,40 +104,27 @@ def request(host, path, bearer_token, url_params=None):
     return response.json()
 
 
-def search(bearer_token, text):
+def search(bearer_token, url_params, PATH):
     """Query the Autocomplete API by a search text
-
     Args:
         text (str): The search term passed to the API.
-
     Returns:
         dict: The JSON response from the request.
     """
 
-    url_params = {
-        'text': text.replace(' ', '+'),
-        'latitude': 32.826382, # NG coordinates
-        'longitude': -117.129813,
-    }
-    return request(API_HOST, AUTO_PATH, bearer_token, url_params=url_params)
+    return request(API_HOST, PATH, bearer_token, url_params=url_params)
 
 
 def get_businesses(bearer_token, businesses):
     """Query the Business API by business ID's.
-
     Args:
         businesses (dict): The businesses from autocomplete, contains name and id
-
     Returns:
         dict: The JSON response from the request.
     """
 
-    # businesses
-    business_path = BUSINESS_PATH + business_id
-
-    return request(API_HOST, business_path, bearer_token)
-
     responses = []
+
     for business in businesses:
         response = {}
 
@@ -155,27 +132,30 @@ def get_businesses(bearer_token, businesses):
 
         business_path = BUSINESS_PATH + business_id
 
+        url_params = {
+            'id': business_id
+        }
+
         # business api call
-        business_meta = request(API_HOST, business_path, bearer_token)
+        business_meta = request(API_HOST, business_path, bearer_token, url_params=url_params)
 
         # name
         response['name'] = business['name']
+        # print (response['name'])
 
-        # business display address
-        # response['location']['address1'] = business_meta['location']['address1']
-        response['display_address'] = ' '.join(business_meta['display_address'])
+        print (business_meta['location']['address1'])
+        response['location'] = {}
+        # business address
+        response['location']['address1'] = business_meta['location']['address1']
 
         # business city
-        # response['location']['city'] = business_meta['location']['city']
+        response['location']['city'] = business_meta['location']['city']
 
         # business rating
         response['rating'] = business_meta['rating']
 
         # business image
         response['image_url'] = business_meta['image_url']
-
-        # business cost
-        response['price'] = business_meta['price']
 
         responses.append(response)
 
@@ -185,13 +165,19 @@ def get_businesses(bearer_token, businesses):
 # def query_api(text):
 def get_autocomplete(text):
     """Queries the API by the input values from the user.
-
     Args:
         text (str): The search text to query.
     """
+
+    url_params = {
+        'text': text.replace(' ', '+'),
+        'latitude': 32.826382, # NG coordinates
+        'longitude': -117.129813,
+    }
+
     bearer_token = obtain_bearer_token(API_HOST, TOKEN_PATH)
 
-    response = search(bearer_token, text)
+    response = search(bearer_token, url_params, AUTO_PATH)
 
     businesses = response.get('businesses')
 
@@ -199,5 +185,6 @@ def get_autocomplete(text):
         return
 
     responses = get_businesses(bearer_token, businesses)
+    print (responses)
 
     return responses
