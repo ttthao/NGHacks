@@ -12,3 +12,6 @@ def index(request):
 
 def itnrsub(request):
     return render(request, 'submit.html', {})
+
+def algo_results(request):
+    return render(request, 'itinerary_template.html', {})
