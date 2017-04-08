@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>TravelFlow: Search Results</title>
+	<title>TravelFlow: Itineraries</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type "image/ico" href="../static/assets/favicon.ico">
@@ -29,6 +29,11 @@
 			</div>
 		</div>
         <div class="container spacer"></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h4>Itinerary: [INSERT NAME HERE]</h4>
+			</div>
+		</div>
         <div class="row">
             <div class="col-sm-12">
                 <h4>Name of Itinerary: [INSERT NAME HERE]</h4>
@@ -38,8 +43,10 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2 class="text-center">Activities</h2>
-                {% block activities %}
-                {% endblock %}
+				<div class="card-columns">
+					{% block activities %}
+					{% endblock %}
+				</div>
             </div>
             <div class="col-sm-6">
                 <h2 class="text-center">View on Maps</h2>
