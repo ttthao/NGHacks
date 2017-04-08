@@ -13,7 +13,7 @@ import autocomplete
 import gmap_directions
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the voodoo_plans index.")
+    return render(request, 'home.template.html', {})
 
 def itnrsub(request):
     if request.POST:
@@ -71,3 +71,8 @@ def autocomplete(request):
         if not suggestions:
             return
         return suggestions #TODO
+    
+
+
+def algo_results(request):
+    return render(request, 'itinerary_template.html', {})

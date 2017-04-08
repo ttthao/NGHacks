@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+	<title>TravelFlow: Share</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type"image/ico" href="../static/assets/favicon.ico">
+
+	<!-- LIBRARIES -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<!-- STYLESHEETS -->
+	<link href="../static/css/main.css" rel="stylesheet">
+	<link href="../static/css/submit.css" rel="stylesheet">
+
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+</head>
+<body class="gradient-bg">
+	<div class="container spacer"></div>
+	<div class="container main-container">
+		<div class="row header">
+			<div class="col-sm-8">
+				<h1>Share Your Itinerary</h1>
+			</div>
+			<div class="col-sm-4">
+				<a href="/"><button type="button" class="btn btn-block btn-secondary">Back to Home Page</button></a>
+			</div>
+		</div>
+		<div class="row spacer"></div>
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<div class="form-group">
+					<label for="input_name">What's the Itinerary's Name?:</label>
+					<input type="text" class="form-control" id="input_name" placeholder="Coding @ Northrup Grumman">
+				</div>
+			</div>
+			<div class="col-sm-3 text-center">
+				<div class="form-group">
+					<label for="input_time">What's the Total Time Spent:</label>
+					<select class="form-control" id="input_time">
+						{% block options_time %}
+						{% endblock %}
+						<!--<option>1 to 2 hours</option>
+						<option>2 to 5 hours</option>
+						<option>5+ hours</option>-->
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-3 text-center">
+				<div class="form-group">
+					<label for="input_purpose">What's the Purpose?</label>
+					<select class="form-control" id="input_purpose">
+						{% block options_purpose %}
+						{% endblock %}
+						<!--<option>With Family/Friends</option>
+						<option>On a Date</option>
+						<option>A Professional Meetup</option>
+						<option>By Yourself</option>
+						<option>For Recreation</option>-->
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-3 text-center">
+				<div class="form-group">
+					<label for="input_activity">What's the Preferred Activity?</label>
+					<select class="form-control" id="input_activity">
+						{% block options_activity %}
+						{% endblock %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="container spacer"></div>
+		<!--<div class="row">
+			<div class="col-sm-12 text-center">
+				<h3>Search:</h3>
+				<div class="form-group row">
+					<label for="example-text-input" class="col-2 col-form-label">Find:</label>
+					<div class="col-10">
+						<input class="form-control" type="text" placeholder="Some Bomb Food" id="example-text-input">
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<!--<div class="container spacer"></div>-->
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2>Your Selections</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h3>Search</h3>
+						<div class="form-group">
+							<!--<label for="input_search">Search:</label>-->
+							<input type="text" class="form-control" id="input_search" placeholder="What are you searching for?">
+						</div>
+						<!--<div class="form-group row">
+							<label for="example-text-input" class="col-2 col-form-label">Find:</label>
+							<div class="col-10">
+								<input class="form-control" type="text" placeholder="Some Bomb Food" id="example-text-input">
+							</div>
+						</div>-->
+					</div>
+				</div>
+
+				{% block activities %}
+				{% endblock %}
+
+				<!--<div class="card-deck">
+					<div class="card">
+						<img class="card-img-top" src="..." alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">Card title</h4>
+							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					</div>
+					<div class="card">
+						<img class="card-img-top" src="..." alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">Card title</h4>
+							<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					</div>
+					<div class="card">
+						<img class="card-img-top" src="..." alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">Card title</h4>
+							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					</div>
+				</div>-->
+			</div>
+			<div class="col-sm-6 text-center">
+				<h3>View on Maps</h3>
+				<!-- INSERT GOOGLE MAPS SHIT HERE -->
+			</div>
+		</div>
+		<div class="container spacer"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a href="/" style="color: white"><button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click Here to Submit!</button></a>
+			</div>
+		</div>
+		<div class="container spacer"></div>
+		<div class="row footer">
+			<div class="col-sm-8 text-left">
+				<p>Made by: <i>Team rmDASHrf from UCSD</i></p>
+			</div>
+			<div class="col-sm-4 text-right">
+				<p>&copy; 2017 KL, TT, JS, DL</p>
+			</div>
+		</div>
+	</div>
+	<div class="container spacer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>
