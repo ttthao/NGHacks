@@ -15,7 +15,7 @@ import search_yelp
 selected_activities = []
 
 def index(request):
-    return render(request, 'home.html', {})
+    return render(request, 'home.template.html', {})
 
 def itnrsub(request):
     if request.method == 'POST':
@@ -114,7 +114,7 @@ def current_activities(request):
         }
 
         return render(HttpResponse(context), 'submit.template.html', {})
-        
+
 def algo_results(request):
     return render(request, 'results.template.html', {})
 
