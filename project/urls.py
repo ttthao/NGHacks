@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from voodoo_plans import views
 
 urlpatterns = [
-    url(r'^', include('voodoo_plans.urls')),
+    # url(r'^', include('voodoo_plans.urls')),
+    url(r'^', views.index, name='index'),
+    url(r'^autocomplete/', views.autocomplete, name='autocomplete'),
     url(r'^admin/', admin.site.urls),
 ]
