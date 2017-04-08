@@ -6,7 +6,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
+# sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
+sys.path.insert(0, '/Users/TTruong/Desktop/Code/NGHacks/project/voodoo_plans/backend/')
 
 import autocomplete
 

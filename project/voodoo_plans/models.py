@@ -17,6 +17,7 @@ class Activity(models.Model):
 	title = models.CharField(max_length=200)
 	address = models.CharField(max_length=200)
 	rating = models.IntegerField(default=0)
+	cost = models.IntegerField(default=0)
 	image_url = models.URLField(max_length=100)
 
 	def __str__(self):
