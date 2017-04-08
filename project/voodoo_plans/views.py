@@ -8,4 +8,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the voodoo_plans index.")
+    return render(request, 'itinerary_template.html', {})
