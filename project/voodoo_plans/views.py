@@ -8,4 +8,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'itinerary_template.html', {})
+    return render(request, 'home.html', {})
+
+def itnrsub(request):
+    return render(request, 'submit.html', {})
