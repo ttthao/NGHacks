@@ -161,17 +161,21 @@ def get_businesses(bearer_token, businesses):
         # name
         response['name'] = business['name']
 
-        # business address
-        response['location']['address1'] = business_meta['location']['address1']
+        # business display address
+        # response['location']['address1'] = business_meta['location']['address1']
+        response['display_address'] = ' '.join(business_meta['display_address'])
 
         # business city
-        response['location']['city'] = business_meta['location']['city']
+        # response['location']['city'] = business_meta['location']['city']
 
         # business rating
         response['rating'] = business_meta['rating']
 
         # business image
         response['image_url'] = business_meta['image_url']
+
+        # business cost
+        response['price'] = business_meta['price']
 
         responses.append(response)
 

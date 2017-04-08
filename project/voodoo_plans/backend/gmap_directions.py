@@ -5,9 +5,9 @@ CLIENT = googlemaps.Client(KEY)
 waypoints = ''
 
 #Returns route from origin to destination w/ waypoints in between
-def get_route(origin, destination, wayp=None):
-	if wayp:
-		route = CLIENT.directions(origin, destination, waypoints=wayp)
+def get_route(origin, destination, wayps=None):
+	if wayps:
+		route = CLIENT.directions(origin, destination, waypoints=wayps)
 	else:
 		route = CLIENT.directions(origin, destination)
 	return route[0]
@@ -19,7 +19,7 @@ def get_dist_duration(route):
 	totalDuration = 0
 	#Step through each leg of the route to get distance and duration
 	legs = route['legs']
-	for i in xrange(len(legs)): 
+	for i in xrange(len(legs)):
 		totalDistance += legs[i]['distance']['value']
 		totalDuration += legs[i]['duration']['value']
 	return totalDistance, totalDuration
