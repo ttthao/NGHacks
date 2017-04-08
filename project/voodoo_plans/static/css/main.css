@@ -1,3 +1,14 @@
+/*
+	COLORS:
+	#615195 PURPLE
+	#DE7684 ORANGE
+	#9085B5 FADED PURPLE
+	#E89FA9 FADED ORANGE
+	#F7F7F7 FADED GREY
+	#636363 MIDDLE GREY
+	#70AE5D GREEN
+*/
+
 html, body {
 	width: 100%;
 	height: 100%;
@@ -7,7 +18,7 @@ html, body {
 .gradient-bg {
 	width: 100%;
 	height: 100%;
-	background-image: url('../images/overlay.png'), linear-gradient(to bottom left,#9085B5,#E89FA9);
+	background-image: url('../assets/overlay.png'), linear-gradient(to bottom left,#9085B5,#E89FA9);
 	background-attachment: fixed;
 }
 
@@ -27,4 +38,57 @@ html, body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
+}
+
+.spacer {
+	height: 25px;
+}
+
+.h3 {
+	margin: 20px;
+	color: #636363;
+	opacity: .7;
+}
+
+.header {
+	background-color: #F7F7F7;
+	color: #636363;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*GENERAL BUTTON STYLE*/
+.btn-color {
+	transition: background-color 0.25s, outline 0.25s;
+	background-color: #DE7684;
+	border: 1px solid #DE7684;
+	outline: none !important;
+}
+
+.btn-color:hover {
+	background-color: #615195 !important;
+	border: 1px solid #615195 !important;
+}
+
+.btn-color:focus {
+	background-color: #E89FA9 !important;
+	border: 1px solid #E89FA9 !important;
+}
+	
+.btn-color:active {
+	background-color: #9085B5 !important;
+	border: 1px solid #9085B5 !important;
+}
+
+.btn-secondary {
+	outline: none !important;
+}
+
+.btn-submit {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
