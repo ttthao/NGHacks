@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-sys.path.insert(0, './backend')
+sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
 
 import autocomplete
 
@@ -19,4 +19,4 @@ def autocomplete(request):
         suggestions = get_autocomplete(text)
         if not suggestions:
             return
-        return render() #TODO
+        return suggestions #TODO
