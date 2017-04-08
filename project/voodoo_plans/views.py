@@ -75,4 +75,8 @@ def autocomplete(request):
 
 
 def algo_results(request):
-    return render(request, 'itinerary_template.html', {})
+    return render(request, 'results.template.html', {})
+
+def displ_itin(request):
+    return render(request, 'itinerary.template.html', {})
+

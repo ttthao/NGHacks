@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^autocomplete/', views.autocomplete, name='autocomplete'),
     url(r'^submit$', views.itnrsub, name='submit'),
-    url(r'^results$', views.algo_results, name='results')
+    url(r'^results$', views.algo_results, name='results'),
+    url(r'^itinerary$', views.displ_itin, name='itinerary')
 ]
