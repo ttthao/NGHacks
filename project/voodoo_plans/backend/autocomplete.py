@@ -132,7 +132,7 @@ def search(bearer_token, text):
     return request(API_HOST, AUTO_PATH, bearer_token, url_params=url_params)
 
 
-def get_business(bearer_token, businesses):
+def get_businesses(bearer_token, businesses):
     """Query the Business API by business ID's.
 
     Args:
@@ -195,3 +195,5 @@ def get_autocomplete(text):
         return
 
     responses = get_businesses(bearer_token, businesses)
+
+    return responses

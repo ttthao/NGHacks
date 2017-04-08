@@ -12,3 +12,11 @@ import autocomplete
 
 def index(request):
     return HttpResponse("Hello, world. You're at the voodoo_plans index.")
+
+def autocomplete(request):
+    if request.POST:
+        text = request.POST['text']
+        suggestions = get_autocomplete(text)
+        if not suggestions:
+            return
+        return render() #TODO
