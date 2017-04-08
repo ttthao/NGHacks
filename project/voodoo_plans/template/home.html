@@ -30,7 +30,7 @@
 				<h3>We plan shit for you to do when you bored, bruh</h3>
 			</div>
 		</div>
-		<hr>
+		<div class="container spacer"></div>
 		<div class="row">
 			<div class="col-sm-6 text-center">
 				<h5>Need a Itinerary?</h5>
@@ -38,21 +38,101 @@
 			</div>
 			<div class="col-sm-6 text-center">
 				<h5>Have a Itinerary?</h5>
-				<button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click here to Submit!</button>
+				<button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click here to Share!</button>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-sm-12 text-center">
-				<p>OPTIONS</p>
-				<p>OPTIONS</p>
-				<p>OPTIONS</p>
-				<p>OPTIONS</p>
-				<p>OPTIONS</p>
-				<p>OPTIONS</p>
+			<div class="col-sm-6 text-center">
+				<div class="form-group">
+					<label for="select_purpose">What's the Purpose?</label>
+					<select class="form-control" id="purpose">
+						<option>With Family/Friends</option>
+						<option>On a Date</option>
+						<option>A Professional Meetup</option>
+						<option>By Yourself</option>
+						<option>For Recreation</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="select_activity">What's the Preferred Activity?</label>
+					<select class="form-control" id="activity">
+						<option>No Preference</option>
+						<option>Amusement Parks</option>
+						<option>Aquariums</option>
+						<option>Bars</option>
+						<option>Beaches</option>
+						<option>Hiking</option>
+						<option>Escape Games</option>
+						<option>Fitness</option>
+						<option>Festivals</option>
+						<option>Cinema</option>
+						<option>Restaurants</option>
+
+						<!--<option>Exercise</option>
+						<option>Outdoors</option>
+						<option>Movies</option>
+						<option>Museums</option>
+						<option>Performances</option>-->
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-6 text-center">
+				<div class="form-group pad">
+					<label for="select_budget">What's your Budget?</label>
+					<select class="form-control" id="purpose">
+						<option>$ (Inexpensive)</option>
+						<option>$$ (Moderate)</option>
+						<option>$$$ (Pricey)</option>
+						<option>$$$$ (Ultra High-End)</option>
+					</select>
+				</div>
+				<!--<p>What's your Budget?</p>
+				<div class="btn-group" role="group" aria-label="budget">
+					<button type="button" class="btn btn-secondary">$</button>
+					<button type="button" class="btn btn-secondary">$$</button>
+					<button type="button" class="btn btn-secondary">$$$</button>
+					<button type="button" class="btn btn-secondary">$$$$</button>
+				</div>-->
+				<div class="form-group">
+					<label for="select_time">How Much Time?</label>
+					<select class="form-control" id="purpose">
+						<option>1 to 2 hours</option>
+						<option>2 to 5 hours</option>
+						<option>5+ hours</option>
+					</select>
+				</div>
+				<!--<p><br>How Much Time?</p>
+				<div class="btn-group" role="group" aria-label="time">
+					<button type="button" class="btn btn-secondary">1 - 2 hr</button>
+					<button type="button" class="btn btn-secondary">2 - 5 hr</button>
+					<button type="button" class="btn btn-secondary">5+ hr</button>
+				</div>-->
+				<div class="form-group">
+					<label for="select_distance">How Far?</label>
+					<select class="form-control" id="purpose">
+						<option>Within 30 miles</option>
+						<option>Within 50 miles</option>
+						<option>Over 70 miles</option>
+					</select>
+				</div>
+				<!--<p><br>How Far?</p>
+				<div class="btn-group" role="group" aria-label="distance">
+					<button type="button" class="btn btn-secondary">~15 mi</button>
+					<button type="button" class="btn btn-secondary">~30 mi</button>
+					<button type="button" class="btn btn-secondary">~60 mi</button>
+				</div>-->
 			</div>
 		</div>
+		<div class="container spacer"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click here to Get Your Itinerary!</button>
+			</div>
+		</div>
+		<div class="container spacer"></div>
 	</div>
+	<div class="container spacer"></div>
 
     <!-- SCRIPTS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
