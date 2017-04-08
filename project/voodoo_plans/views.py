@@ -6,8 +6,8 @@ from django.shortcuts import render
 from voodoo_plans.models import Itinerary, Activity, Route
 from django.http import HttpResponse
 
-# sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
-sys.path.insert(0, '/Users/TTruong/Desktop/Code/NGHacks/project/voodoo_plans/backend/')
+sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
+#sys.path.insert(0, '/Users/TTruong/Desktop/Code/NGHacks/project/voodoo_plans/backend/')
 
 import autocomplete
 import gmap_directions
@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'home.template.html', {})
 
 def itnrsub(request):
-    if request.POST:
+    if request.method == 'POST':
         title = request['title']
         duration = request['duration']
         purpose = request['purpose']
