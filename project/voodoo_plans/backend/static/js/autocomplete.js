@@ -1,9 +1,12 @@
 $(document).ready(function(){
-  $("search").keypress(function(){
-    setTimeout(function(){
+  $("search").autocomplete({
+    source: function(request, response) {
       $.post("/autocomplete/", { 'text': $("search").text() }, function(data, status){
-        console.log("Status: " + status)
+        console.log("Autocomplete status: " + status)
       })
-    }, 3000)
+    },
+    create: function() {
+      //TODO
+    }
   })
 })
