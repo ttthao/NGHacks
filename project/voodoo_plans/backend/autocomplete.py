@@ -114,7 +114,7 @@ def request(host, path, bearer_token, url_params=None):
     return response.json()
 
 
-def search(bearer_token, text):
+def search(bearer_token, url_params, PATH):
     """Query the Autocomplete API by a search text
 
     Args:
@@ -124,12 +124,7 @@ def search(bearer_token, text):
         dict: The JSON response from the request.
     """
 
-    url_params = {
-        'text': text.replace(' ', '+'),
-        'latitude': 32.826382, # NG coordinates
-        'longitude': -117.129813,
-    }
-    return request(API_HOST, AUTO_PATH, bearer_token, url_params=url_params)
+    return request(API_HOST, PATH, bearer_token, url_params=url_params)
 
 
 def get_businesses(bearer_token, businesses):
@@ -142,12 +137,8 @@ def get_businesses(bearer_token, businesses):
         dict: The JSON response from the request.
     """
 
-    # businesses
-    business_path = BUSINESS_PATH + business_id
-
-    return request(API_HOST, business_path, bearer_token)
-
     responses = []
+
     for business in businesses:
         response = {}
 
@@ -155,27 +146,31 @@ def get_businesses(bearer_token, businesses):
 
         business_path = BUSINESS_PATH + business_id
 
+        url_params = {
+            'id': business_id
+        }
+
         # business api call
-        business_meta = request(API_HOST, business_path, bearer_token)
+        business_meta = request(API_HOST, business_path, bearer_token, url_params=url_params)
 
         # name
         response['name'] = business['name']
+        # print (response['name'])
 
-        # business display address
+        print (business_meta['location']['address1'])
+        response['location'] = {}
+        # business address
         # response['location']['address1'] = business_meta['location']['address1']
-        response['display_address'] = ' '.join(business_meta['display_address'])
-
-        # business city
+        #
+        # # business city
         # response['location']['city'] = business_meta['location']['city']
+        response['location']['display_address'] = ' '.join(business_meta['location']['display_address'])
 
         # business rating
         response['rating'] = business_meta['rating']
 
         # business image
         response['image_url'] = business_meta['image_url']
-
-        # business cost
-        response['price'] = business_meta['price']
 
         responses.append(response)
 
@@ -189,9 +184,16 @@ def get_autocomplete(text):
     Args:
         text (str): The search text to query.
     """
+
+    url_params = {
+        'text': text.replace(' ', '+'),
+        'latitude': 32.826382, # NG coordinates
+        'longitude': -117.129813,
+    }
+
     bearer_token = obtain_bearer_token(API_HOST, TOKEN_PATH)
 
-    response = search(bearer_token, text)
+    response = search(bearer_token, url_params, AUTO_PATH)
 
     businesses = response.get('businesses')
 
@@ -199,5 +201,6 @@ def get_autocomplete(text):
         return
 
     responses = get_businesses(bearer_token, businesses)
+    print (responses)
 
     return responses

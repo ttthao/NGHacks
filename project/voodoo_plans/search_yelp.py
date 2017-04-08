@@ -151,7 +151,9 @@ def get_businesses(bearer_token, businesses):
         }
 
         # business api call
-        business_meta = request(API_HOST, business_path, bearer_token, url_params=url_params)
+        # business_meta = request(API_HOST, business_path, bearer_token, url_params=url_params)
+        business_meta = search(bearer_token, url_params, BUSINESS_PATH)
+        # response = search(bearer_token, url_params, SEARCH_PATH)
 
         # name
         response['name'] = business['name']
@@ -172,13 +174,12 @@ def get_businesses(bearer_token, businesses):
         # business image
         response['image_url'] = business_meta['image_url']
 
-        responses.append(response)
+        responses.append(response)  
 
     return responses
 
 
-# def query_api(text):
-def get_autocomplete(text):
+def query(text):
     """Queries the API by the input values from the user.
 
     Args:
@@ -193,7 +194,7 @@ def get_autocomplete(text):
 
     bearer_token = obtain_bearer_token(API_HOST, TOKEN_PATH)
 
-    response = search(bearer_token, url_params, AUTO_PATH)
+    response = search(bearer_token, url_params, SEARCH_PATH)
 
     businesses = response.get('businesses')
 
