@@ -39,9 +39,11 @@
 				<div class="form-group">
 					<label for="input_time">What's the Total Time Spent:</label>
 					<select class="form-control" id="input_time">
-						<option>1 to 2 hours</option>
+						{% block options_time %}
+						{% endblock %}
+						<!--<option>1 to 2 hours</option>
 						<option>2 to 5 hours</option>
-						<option>5+ hours</option>
+						<option>5+ hours</option>-->
 					</select>
 				</div>
 			</div>
@@ -49,17 +51,19 @@
 				<div class="form-group">
 					<label for="input_purpose">What's the Purpose?</label>
 					<select class="form-control" id="input_purpose">
-						<option>With Family/Friends</option>
+						{% block options_purpose %}
+						{% endblock %}
+						<!--<option>With Family/Friends</option>
 						<option>On a Date</option>
 						<option>A Professional Meetup</option>
 						<option>By Yourself</option>
-						<option>For Recreation</option>
+						<option>For Recreation</option>-->
 					</select>
 				</div>
 			</div>
 		</div>
 		<div class="container spacer"></div>
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-sm-12 text-center">
 				<h3>Search:</h3>
 				<div class="form-group row">
@@ -69,12 +73,35 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container spacer"></div>
+		</div>-->
+		<!--<div class="container spacer"></div>-->
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h3>Your Selections:</h3>
-				<div class="card-deck">
+				<h2>Your Selections</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h3>Search</h3>
+						<div class="form-group">
+							<!--<label for="input_search">Search:</label>-->
+							<input type="text" class="form-control" id="input_search" placeholder="What are you searching for?">
+						</div>
+						<!--<div class="form-group row">
+							<label for="example-text-input" class="col-2 col-form-label">Find:</label>
+							<div class="col-10">
+								<input class="form-control" type="text" placeholder="Some Bomb Food" id="example-text-input">
+							</div>
+						</div>-->
+					</div>
+				</div>
+
+				{% block activities %}
+				{% endblock %}
+
+				<!--<div class="card-deck">
 					<div class="card">
 						<img class="card-img-top" src="..." alt="Card image cap">
 						<div class="card-block">
@@ -99,7 +126,11 @@
 							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>
-				</div>
+				</div>-->
+			</div>
+			<div class="col-sm-6 text-center">
+				<h3>View on Maps</h3>
+				<!-- INSERT GOOGLE MAPS SHIT HERE -->
 			</div>
 		</div>
 		<div class="container spacer"></div>

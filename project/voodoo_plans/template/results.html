@@ -1,14 +1,16 @@
 {% load staticfiles %}
 <!doctype html>
 <html>
+
 <head>
 	<title>TravelFlow: Results</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type"image/ico" href="../static/assets/favicon.ico">
+	<link rel="icon" type "image/ico" href="../static/assets/favicon.ico">
 
 	<!-- LIBRARIES -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
 
 	<!-- STYLESHEETS -->
 	<link href="../static/css/main.css" rel="stylesheet">
@@ -17,31 +19,54 @@
 	<!-- FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans" rel="stylesheet">
 </head>
+
 <body class="gradient-bg">
 	<div class="container spacer"></div>
 	<div class="container main-container">
-	  <div class="row header">
-	    <div class="col-sm-8 text">
-	      <h1>Itineraries</h1>
-	    </div>
+		<div class="row header">
+			<div class="col-sm-8">
+				<h1>Itineraries</h1>
+			</div>
 			<div class="col-sm-4">
 				<a href="/"><button type="button" class="btn btn-block btn-secondary">Back to Home Page</button></a>
 			</div>
-	  </div>
-	  <br /> <br />
-	{% block content %}
-	{% endblock %}
-
-	<div class="row header">
-	  <div class="col-sm-12 text">
-	    <h1>Recommendations</h1>
-	  </div>
+		</div>
+		<div class="container spacer"></div>
+		<div class="row text-center">
+			<div class="col-sm-6">
+				<h2>Activities</h2>
+				<div class="card-columns">
+					{% block content %} 
+					{% endblock %}
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h2>View on Maps</h2>
+				<!-- INSERT GOOGLE MAPS SHIT HERE -->
+			</div>
+		</div>
+		<div class="container spacer"></div>
+		<div class="row header">
+			<div class="col-sm-12 text">
+				<h1>Recommendations</h1>
+			</div>
+		</div>
+		<div class="container spacer"></div>
+		{% block recommendations %} 
+		{% endblock %}
+		<div class="container spacer"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<button type="button" class="btn btn-lg btn-primary btn-color btn-submit"><a href="/" style="color: white;">Click Here to Create your Itinerary!</a></button>
+			</div>
+		</div>
+		<div class="container spacer"></div>
 	</div>
-	<br /> <br />
-	{% block recommendations %}
-	{% endblock %}
-    <!-- SCRIPTS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<div class="container spacer"></div>
+
+	<!-- SCRIPTS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
+
 </html>
