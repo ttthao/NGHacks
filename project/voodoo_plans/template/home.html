@@ -34,11 +34,11 @@
 		<div class="container spacer"></div>
 		<div class="row">
 			<div class="col-sm-6 text-center">
-				<h5>Need an Itinerary?</h5>
+				<h5><b>Need an Itinerary?</b></h5>
 				<p>Scroll down to create a Itinerary just for you! Select the options and our application will find the best plans that suit your needs!</p>
 			</div>
 			<div class="col-sm-6 text-center">
-				<h5>Have an Itinerary?</h5>
+				<h5><b>Have an Itinerary?</b></h5>
 				<a href="/submit" style="color: white;"><button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click Here to Share!</button></a>
 			</div>
 		</div>
@@ -50,11 +50,6 @@
 					<select class="form-control" id="purpose">
 						{% block options_purpose %}
 						{% endblock %}
-						<!--<option>With Family/Friends</option>
-						<option>On a Date</option>
-						<option>A Professional Meetup</option>
-						<option>By Yourself</option>
-						<option>For Recreation</option>-->
 					</select>
 				</div>
 				<div class="form-group">
@@ -62,22 +57,6 @@
 					<select class="form-control" id="activity">
 						{% block options_activity %}
 						{% endblock %}
-						<!--<option>No Preference</option>
-						<option>Amusement Parks</option>
-						<option>Aquariums</option>
-						<option>Bars</option>
-						<option>Beaches</option>
-						<option>Hiking</option>
-						<option>Escape Games</option>
-						<option>Fitness</option>
-						<option>Festivals</option>
-						<option>Cinema</option>
-						<option>Restaurants</option>-->
-						<!--<option>Exercise</option>
-						<option>Outdoors</option>
-						<option>Movies</option>
-						<option>Museums</option>
-						<option>Performances</option>-->
 					</select>
 				</div>
 			</div>
@@ -87,57 +66,28 @@
 					<select class="form-control" id="budget">
 						{% block options_budget %}
 						{% endblock %}
-						<!--<option>$ (Inexpensive)</option>
-						<option>$$ (Moderate)</option>
-						<option>$$$ (Pricey)</option>
-						<option>$$$$ (Ultra High-End)</option>-->
 					</select>
 				</div>
-				<!--<p>What's your Budget?</p>
-				<div class="btn-group" role="group" aria-label="budget">
-					<button type="button" class="btn btn-secondary">$</button>
-					<button type="button" class="btn btn-secondary">$$</button>
-					<button type="button" class="btn btn-secondary">$$$</button>
-					<button type="button" class="btn btn-secondary">$$$$</button>
-				</div>-->
 				<div class="form-group">
 					<label for="select_time">How Much Time?</label>
 					<select class="form-control" id="time">
 						{% block options_time %}
 						{% endblock %}
-						<!--<option>1 to 2 hours</option>
-						<option>2 to 5 hours</option>
-						<option>5+ hours</option>-->
 					</select>
 				</div>
-				<!--<p><br>How Much Time?</p>
-				<div class="btn-group" role="group" aria-label="time">
-					<button type="button" class="btn btn-secondary">1 - 2 hr</button>
-					<button type="button" class="btn btn-secondary">2 - 5 hr</button>
-					<button type="button" class="btn btn-secondary">5+ hr</button>
-				</div>-->
 				<div class="form-group">
 					<label for="select_distance">How Far?</label>
 					<select class="form-control" id="distance">
 						{% block options_distance %}
 						{% endblock %}
-						<!--<option>Within 30 miles</option>
-						<option>Within 50 miles</option>
-						<option>Over 70 miles</option>-->
 					</select>
 				</div>
-				<!--<p><br>How Far?</p>
-				<div class="btn-group" role="group" aria-label="distance">
-					<button type="button" class="btn btn-secondary">~15 mi</button>
-					<button type="button" class="btn btn-secondary">~30 mi</button>
-					<button type="button" class="btn btn-secondary">~60 mi</button>
-				</div>-->
 			</div>
 		</div>
 		<div class="container spacer"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a href="/results" style="color: white"><button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click Here for Your Itinerary!</button></a>
+				<a href="/results" style="color: white"><button type="button" class="btn btn-lg btn-primary btn-color btn-submit">Click Here for Search!</button></a>
 			</div>
 		</div>
 		<div class="container spacer"></div>
