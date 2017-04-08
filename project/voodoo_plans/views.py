@@ -6,14 +6,14 @@ from django.shortcuts import render
 from voodoo_plans.models import Itinerary, Activity, Route
 from django.http import HttpResponse
 
-sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
+# sys.path.insert(0, '/Users/jsenar/projects/NGHacks/project/voodoo_plans/backend/')
 #sys.path.insert(0, '/Users/TTruong/Desktop/Code/NGHacks/project/voodoo_plans/backend/')
 
 import autocomplete
 import gmap_directions
 
 def index(request):
-    return render(request, 'home.template.html', {})
+    return render(request, 'home.html', {})
 
 def itnrsub(request):
     if request.method == 'POST':
@@ -60,7 +60,7 @@ def itnrsub(request):
             activity.save()
             route.save()
 
-            
+
 
     return render(request, 'submit.template.html', {})
 
@@ -71,7 +71,7 @@ def autocomplete(request):
         if not suggestions:
             return
         return suggestions #TODO
-    
+
 
 
 def algo_results(request):
@@ -79,4 +79,3 @@ def algo_results(request):
 
 def displ_itin(request):
     return render(request, 'itinerary.template.html', {})
-

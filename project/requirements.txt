@@ -1,0 +1,12 @@
+conda==4.2.13
+Django==1.11
+enum34==1.1.6
+googlemaps==2.4.6
+gunicorn==19.7.1
+numpy==1.11.3
+pycosat==0.6.1
+pycrypto==2.6.1
+pytz==2017.2
+PyYAML==3.11
+requests==2.10.0
+ruamel-yaml===-VERSION
