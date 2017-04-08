@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^autocomplete/', views.autocomplete, name='autocomplete'),
     url(r'^submit$', views.itnrsub, name='submit'),
     url(r'^results$', views.algo_results, name='results')
 ]
