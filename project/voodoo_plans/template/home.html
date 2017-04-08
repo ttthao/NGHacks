@@ -47,17 +47,21 @@
 				<div class="form-group">
 					<label for="select_purpose">What's the Purpose?</label>
 					<select class="form-control" id="purpose">
-						<option>With Family/Friends</option>
+						{% block options_purpose %}
+						{% endblock %}
+						<!--<option>With Family/Friends</option>
 						<option>On a Date</option>
 						<option>A Professional Meetup</option>
 						<option>By Yourself</option>
-						<option>For Recreation</option>
+						<option>For Recreation</option>-->
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="select_activity">What's the Preferred Activity?</label>
 					<select class="form-control" id="activity">
-						<option>No Preference</option>
+						{% block options_activity %}
+						{% endblock %}
+						<!--<option>No Preference</option>
 						<option>Amusement Parks</option>
 						<option>Aquariums</option>
 						<option>Bars</option>
@@ -67,7 +71,7 @@
 						<option>Fitness</option>
 						<option>Festivals</option>
 						<option>Cinema</option>
-						<option>Restaurants</option>
+						<option>Restaurants</option>-->
 						<!--<option>Exercise</option>
 						<option>Outdoors</option>
 						<option>Movies</option>
@@ -79,11 +83,13 @@
 			<div class="col-sm-6 text-center">
 				<div class="form-group pad">
 					<label for="select_budget">What's your Budget?</label>
-					<select class="form-control" id="purpose">
-						<option>$ (Inexpensive)</option>
+					<select class="form-control" id="budget">
+						{% block options_budget %}
+						{% endblock %}
+						<!--<option>$ (Inexpensive)</option>
 						<option>$$ (Moderate)</option>
 						<option>$$$ (Pricey)</option>
-						<option>$$$$ (Ultra High-End)</option>
+						<option>$$$$ (Ultra High-End)</option>-->
 					</select>
 				</div>
 				<!--<p>What's your Budget?</p>
@@ -95,10 +101,12 @@
 				</div>-->
 				<div class="form-group">
 					<label for="select_time">How Much Time?</label>
-					<select class="form-control" id="purpose">
-						<option>1 to 2 hours</option>
+					<select class="form-control" id="time">
+						{% block options_time %}
+						{% endblock %}
+						<!--<option>1 to 2 hours</option>
 						<option>2 to 5 hours</option>
-						<option>5+ hours</option>
+						<option>5+ hours</option>-->
 					</select>
 				</div>
 				<!--<p><br>How Much Time?</p>
@@ -109,10 +117,12 @@
 				</div>-->
 				<div class="form-group">
 					<label for="select_distance">How Far?</label>
-					<select class="form-control" id="purpose">
-						<option>Within 30 miles</option>
+					<select class="form-control" id="distance">
+						{% block options_distance %}
+						{% endblock %}
+						<!--<option>Within 30 miles</option>
 						<option>Within 50 miles</option>
-						<option>Over 70 miles</option>
+						<option>Over 70 miles</option>-->
 					</select>
 				</div>
 				<!--<p><br>How Far?</p>
