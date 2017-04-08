@@ -16,7 +16,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the voodoo_plans index.")
 
 def itnrsub(request):
-    if request.POST:
+    if request.method == 'POST':
         title = request['title']
         duration = request['duration']
         purpose = request['purpose']
@@ -25,15 +25,15 @@ def itnrsub(request):
         activities = request['activities']
 
 
-        waypts = None
+        wayps = None
         origin = activities[0][display_address]
         destination = activities[-1][display_address]
         if len(activities) > 2:
-            waypts = []
-            for waypt in activities[1:len(activities)-1]:
-                waypts.append(waypt[display_address])
+            wayps = []
+            for wayp in activities[1:len(activities)-1]:
+                wayps.append(waypt[display_address])
 
-        route = get_route(origin, destination, waypts)
+        route = get_route(origin, destination, wayps)
 
         # distance
         distance = get_dist_duration(route)[0]
@@ -50,6 +50,7 @@ def itnrsub(request):
         itinerary.save()
 
         # activity and routes
+        ordered_activities = []
         for i in range(len(activities)):
             title = activities[i]['title']
             address = activities[i]['display_address']
@@ -57,10 +58,22 @@ def itnrsub(request):
             image_url = activities[i]['image_url']
             activity = Activity(title=title, address=address, rating=rating, image_url=image_url)
             route = Route(itinerary=itinerary, activity=activity, order=i)
+            ordered_activities.append(activity)
             activity.save()
             route.save()
 
-            
+
+        context = {
+            'itinerary': itinerary,
+            'activities': ordered_activities,
+            'map': {
+                'origin': origin,
+                'destination': destination,
+                'wayps': wayps
+            }
+        }
+        
+        return HttpResponse(context)
 
     return render(request, 'submit.template.html', {})
 
