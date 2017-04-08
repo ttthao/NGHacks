@@ -65,6 +65,12 @@ p {
 	padding-bottom: 20px;
 }
 
+.footer {
+	background-color: #F7F7F7;
+	color: #636363;
+	padding-top: 10px;
+}
+
 a:hover {
 	text-decoration: none;
 }
